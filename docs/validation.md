@@ -73,6 +73,8 @@ scripts/validate-docker.sh
 
 `validate-linux.sh` 产生环境记录、proxy unit 结果和 `build/integration.json`。加 `--network` 的集成检查依赖外网 `example.com:443`；外网故障应记录真实失败或受阻，不能删掉正例后宣称网络验证完整。
 
-CI 计划覆盖 Ubuntu 24.04 x86_64 和 arm64 的 VM、Docker、打包与 artifact 保存。此报告仅对本次本地 arm64 实测负责；未实际执行的 CI 和 x86_64 不列为已通过。
+CI覆盖Ubuntu24.04 x86_64和arm64的VM、Docker、打包与artifact保存。首次[远端运行42184102453](https://github.com/earon-han/tegum/actions/runs/42184102453)在两个架构的Linux7.0 Azure runner因AppArmor限制loopback RTM_NEWADDR而BLOCKED；原始记录保存于`docs/evidence/ci-initial/`，未计作安全负例通过，Docker阶段当时未执行。
+
+随后CI增加仅临时runner使用的bwrap限定AppArmor许可，保留全局sysctl原值，配置原文、加载状态和检查值作为artifact保存。重跑结果以实际workflow为准；本地ARM64的两环境结果不依赖此CIprofile。
 
 原始 JSON 带实现源码摘要、二进制 SHA-256、每项 stdout/stderr、CLI result 及每次性能样本；二进制摘要可以对应发布包 manifest，源码树摘要用于追溯。最终结果以原始证据中的 `failed`、`blocked` 字段为准。

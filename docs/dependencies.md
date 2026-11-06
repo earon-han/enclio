@@ -39,6 +39,8 @@ Linux VM 为 ARM64 时只构成 ARM64 运行证据；源码可在 amd64 编译�
 
 SELinux enforcing 或自定义 LSM 策略也可能拒绝嵌套 user/mount namespace，需由管理员提供对应策略并验证；不能把停用 SELinux 写成默认安装步骤。Tegum 不自动修改 sysctl、AppArmor、SELinux、Docker daemon 或宿主防火墙。
 
+GitHub临时CI VM实测还会在loopback的RTM_NEWADDR初始化被AppArmor拒绝，即使userns创建本身成功。CI显式加载仅绑定`/usr/bin/bwrap`的命名profile（ABI4.0、`flags=(unconfined)`、`userns,`），保留全局`apparmor_restrict_unprivileged_userns`原值；已有bwrap profile则拒绝覆盖，记录原文/SHA/加载状态，job结束卸载。这是临时测试机对bwrap的许可例外，并不额外提供AppArmor confinement，也不是CLI自动安装行为。其形式参考[Docker官方Ubuntu rootless指引](https://docs.docker.com/engine/security/rootless/troubleshoot/)；生产环境应由管理员审查限定策略，不直接照搬CI权限。
+
 seccomp 拒绝清单只减少内核接口，并不抵御内核自身漏洞；宿主必须运行仍受支持且已更新的内核。外层服务还应限制 CPU、内存、PID 数、磁盘和输出。内核版本数字本身不能表明所有安全修复均已包含。
 
 ## Docker 容器条件
