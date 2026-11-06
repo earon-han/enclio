@@ -1,0 +1,938 @@
+{
+  "schema_version": 1,
+  "git_dirty": null,
+  "git_head": null,
+  "source_file_count": 18,
+  "source_id_schema": 1,
+  "source_scope": [
+    "src",
+    "tests",
+    "scripts",
+    "examples",
+    ".github/workflows",
+    "Makefile",
+    "Dockerfile"
+  ],
+  "source_tree_sha256": "847b9a7fa6d9f9820987a45d6ee3321a10e35f395484813e35e3a6c83242d9cd",
+  "binary_sha256": "26e56068301b6dd5aabd1faf593e04ef85e5cfd918d7529a9e68cf4986066c75",
+  "platform": "Linux lima-jiuwen-lite 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:39:52 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux",
+  "results": [
+    {
+      "name": "platform_startup",
+      "status": "PASS",
+      "result": {
+        "schema_version": 1,
+        "status": "exited",
+        "exit_code": 0,
+        "signal": 0,
+        "duration_ms": 10,
+        "command_started": true
+      }
+    },
+    {
+      "name": "filesystem_and_symlink",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "PROBE_EXECUTED\n",
+      "stderr": "",
+      "result": {
+        "schema_version": 1,
+        "status": "exited",
+        "exit_code": 0,
+        "signal": 0,
+        "duration_ms": 12,
+        "command_started": true
+      },
+      "elapsed_ms": 12.837
+    },
+    {
+      "name": "seccomp_and_alternate_syscalls",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "PROBE_EXECUTED\n",
+      "stderr": "",
+      "result": {
+        "schema_version": 1,
+        "status": "exited",
+        "exit_code": 0,
+        "signal": 0,
+        "duration_ms": 11,
+        "command_started": true
+      },
+      "elapsed_ms": 11.134
+    },
+    {
+      "name": "trusted_supervisor_control",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "PROBE_EXECUTED\nTRUSTED_PROCESSES_CHECKED=1\n",
+      "stderr": "",
+      "result": {
+        "schema_version": 1,
+        "status": "exited",
+        "exit_code": 0,
+        "signal": 0,
+        "duration_ms": 10,
+        "command_started": true
+      },
+      "elapsed_ms": 11.16
+    },
+    {
+      "name": "environment_allowlist",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "PROBE_EXECUTED\n",
+      "stderr": "",
+      "result": {
+        "schema_version": 1,
+        "status": "exited",
+        "exit_code": 0,
+        "signal": 0,
+        "duration_ms": 10,
+        "command_started": true
+      },
+      "elapsed_ms": 11.156
+    },
+    {
+      "name": "inherited_fds",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "PROBE_EXECUTED\n",
+      "stderr": "",
+      "result": {
+        "schema_version": 1,
+        "status": "exited",
+        "exit_code": 0,
+        "signal": 0,
+        "duration_ms": 10,
+        "command_started": true
+      },
+      "elapsed_ms": 11.095
+    },
+    {
+      "name": "business_nonzero",
+      "status": "PASS",
+      "returncode": 23,
+      "stdout": "PROBE_EXECUTED\n",
+      "stderr": "",
+      "result": {
+        "schema_version": 1,
+        "status": "exited",
+        "exit_code": 23,
+        "signal": 0,
+        "duration_ms": 10,
+        "command_started": true
+      },
+      "elapsed_ms": 10.953
+    },
+    {
+      "name": "target_signal",
+      "status": "PASS",
+      "returncode": 143,
+      "stdout": "PROBE_EXECUTED\n",
+      "stderr": "",
+      "result": {
+        "schema_version": 1,
+        "status": "exited",
+        "exit_code": 143,
+        "signal": 15,
+        "duration_ms": 11,
+        "command_started": true
+      },
+      "elapsed_ms": 11.19
+    },
+    {
+      "name": "business_exit_143",
+      "status": "PASS",
+      "returncode": 143,
+      "stdout": "PROBE_EXECUTED\n",
+      "stderr": "",
+      "result": {
+        "schema_version": 1,
+        "status": "exited",
+        "exit_code": 143,
+        "signal": 0,
+        "duration_ms": 11,
+        "command_started": true
+      },
+      "elapsed_ms": 11.273
+    },
+    {
+      "name": "stdout_stderr",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "PROBE_EXECUTED\n",
+      "stderr": "business-error\n",
+      "result": {
+        "schema_version": 1,
+        "status": "exited",
+        "exit_code": 0,
+        "signal": 0,
+        "duration_ms": 10,
+        "command_started": true
+      },
+      "elapsed_ms": 11.031
+    },
+    {
+      "name": "timeout",
+      "status": "PASS",
+      "returncode": 124,
+      "stdout": "PROBE_EXECUTED\n",
+      "stderr": "",
+      "result": {
+        "schema_version": 1,
+        "status": "timeout",
+        "exit_code": 124,
+        "signal": 0,
+        "duration_ms": 1108,
+        "command_started": true
+      },
+      "elapsed_ms": 1112.542
+    },
+    {
+      "name": "background_setsid_cleanup",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "PROBE_EXECUTED\n",
+      "stderr": "",
+      "result": {
+        "schema_version": 1,
+        "status": "exited",
+        "exit_code": 0,
+        "signal": 0,
+        "duration_ms": 11,
+        "command_started": true
+      },
+      "elapsed_ms": 14.145
+    },
+    {
+      "name": "background_did_not_survive",
+      "status": "PASS"
+    },
+    {
+      "name": "cancellation",
+      "status": "PASS",
+      "returncode": 143,
+      "stdout": "PROBE_EXECUTED\n",
+      "stderr": "",
+      "result": {
+        "schema_version": 1,
+        "status": "cancelled",
+        "exit_code": 143,
+        "signal": 15,
+        "duration_ms": 119,
+        "command_started": true
+      }
+    },
+    {
+      "name": "caller_sigkill_cleanup",
+      "status": "PASS",
+      "stdout": "PROBE_EXECUTED\nCHILD_SPAWNED\n",
+      "stderr": "",
+      "leftover_private_directories": [
+        {
+          "path": "/tmp/tegum-3ytgUn",
+          "mode": "0o700"
+        }
+      ]
+    },
+    {
+      "name": "actual_caller_exit",
+      "status": "PASS",
+      "result": {
+        "schema_version": 1,
+        "status": "cancelled",
+        "exit_code": 143,
+        "signal": 15,
+        "duration_ms": 112,
+        "command_started": true
+      }
+    },
+    {
+      "name": "cwd_startup_failure",
+      "status": "PASS",
+      "stderr": "bwrap: Can't chdir to /workspace/missing-cwd: No such file or directory\n",
+      "result": {
+        "schema_version": 1,
+        "status": "setup_error",
+        "exit_code": 125,
+        "signal": 0,
+        "duration_ms": 12,
+        "command_started": false
+      }
+    },
+    {
+      "name": "result_outside_workspace",
+      "status": "PASS",
+      "stderr": "tegum: result must reside outside the writable workspace\n"
+    },
+    {
+      "name": "ld_preload_target_only",
+      "status": "PASS",
+      "stdout": "PRELOAD_TARGET\n",
+      "stderr": "",
+      "result": {
+        "schema_version": 1,
+        "status": "exited",
+        "exit_code": 0,
+        "signal": 0,
+        "duration_ms": 11,
+        "command_started": true
+      }
+    },
+    {
+      "name": "exec_startup_failure",
+      "status": "PASS",
+      "returncode": 125,
+      "stderr": "tegum: command exec: No such file or directory\n",
+      "result": {
+        "schema_version": 1,
+        "status": "setup_error",
+        "exit_code": 125,
+        "signal": 0,
+        "duration_ms": 11,
+        "command_started": false
+      }
+    },
+    {
+      "name": "direct_network_denied",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "PROBE_EXECUTED\n",
+      "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (7) Failed to connect to 1.1.1.1 port 443 after 0 ms: Couldn't connect to server\n",
+      "result": {
+        "schema_version": 1,
+        "status": "exited",
+        "exit_code": 0,
+        "signal": 0,
+        "duration_ms": 20,
+        "command_started": true
+      },
+      "elapsed_ms": 21.51
+    },
+    {
+      "name": "trusted_init_and_relay_control",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "PROBE_EXECUTED\nTRUSTED_PROCESSES_CHECKED=2\n",
+      "stderr": "",
+      "result": {
+        "schema_version": 1,
+        "status": "exited",
+        "exit_code": 0,
+        "signal": 0,
+        "duration_ms": 124,
+        "command_started": true
+      },
+      "elapsed_ms": 128.589
+    },
+    {
+      "name": "host_proxy_failure",
+      "status": "PASS",
+      "stderr": "tegum: proxy exited unexpectedly\n",
+      "result": {
+        "schema_version": 1,
+        "status": "setup_error",
+        "exit_code": 125,
+        "signal": 0,
+        "duration_ms": 134,
+        "command_started": true
+      }
+    },
+    {
+      "name": "relay_failure",
+      "status": "PASS",
+      "stdout": "PROBE_EXECUTED\nRELAY_KILLED\n",
+      "stderr": "",
+      "result": {
+        "schema_version": 1,
+        "status": "setup_error",
+        "exit_code": 125,
+        "signal": 0,
+        "duration_ms": 133,
+        "command_started": true
+      }
+    },
+    {
+      "name": "https_allowlist",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "PROBE_EXECUTED\n",
+      "stderr": "",
+      "result": {
+        "schema_version": 1,
+        "status": "exited",
+        "exit_code": 0,
+        "signal": 0,
+        "duration_ms": 920,
+        "command_started": true
+      },
+      "elapsed_ms": 932.324
+    },
+    {
+      "name": "https_host_denied",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "PROBE_EXECUTED\n",
+      "stderr": "curl: (22) The requested URL returned error: 403\n",
+      "result": {
+        "schema_version": 1,
+        "status": "exited",
+        "exit_code": 0,
+        "signal": 0,
+        "duration_ms": 148,
+        "command_started": true
+      },
+      "elapsed_ms": 155.225
+    },
+    {
+      "name": "proxy_environment_removal_cannot_bypass",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "PROBE_EXECUTED\n",
+      "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (7) Failed to connect to 1.1.1.1 port 443 after 0 ms: Couldn't connect to server\n",
+      "result": {
+        "schema_version": 1,
+        "status": "exited",
+        "exit_code": 0,
+        "signal": 0,
+        "duration_ms": 157,
+        "command_started": true
+      },
+      "elapsed_ms": 163.383
+    },
+    {
+      "name": "http_unsupported",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "PROBE_EXECUTED\n",
+      "stderr": "curl: (22) The requested URL returned error: 400\n",
+      "result": {
+        "schema_version": 1,
+        "status": "exited",
+        "exit_code": 0,
+        "signal": 0,
+        "duration_ms": 156,
+        "command_started": true
+      },
+      "elapsed_ms": 162.57
+    },
+    {
+      "name": "repeat_100",
+      "status": "PASS"
+    },
+    {
+      "name": "concurrent_4x3",
+      "status": "PASS"
+    },
+    {
+      "name": "normal_temporary_directory_cleanup",
+      "status": "PASS",
+      "leftover_directories": []
+    }
+  ],
+  "benchmark_samples": [
+    {
+      "elapsed_ms": 13.721,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 13.097,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.172,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.14,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.355,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.984,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.555,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.11,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.2,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.964,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.093,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.129,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.639,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.913,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.759,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.113,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.51,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.271,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.373,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.734,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.659,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.482,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.803,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.711,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.403,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.676,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.634,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.894,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.991,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.592,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.429,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.458,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.256,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.755,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.643,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.501,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.809,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.928,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.004,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.923,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.828,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.052,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.345,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.837,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.828,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.177,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.609,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.632,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.766,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.58,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.644,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.5,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.527,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.647,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.712,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.718,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.874,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.91,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.945,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.127,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.749,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.884,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.942,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.912,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.064,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.937,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.634,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.228,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.23,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.339,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.237,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.669,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.5,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.67,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.7,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.577,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.779,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.998,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.917,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.242,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.619,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.165,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.926,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.829,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.709,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.552,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.541,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.768,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.466,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.773,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.876,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.954,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.765,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.584,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.636,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.673,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.406,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.234,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.811,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.537,
+      "returncode": 0,
+      "command_started": true
+    }
+  ],
+  "failed": 0,
+  "blocked": 0
+}

@@ -1,0 +1,2 @@
+BLOCKED: platform_startup
+PASS: normal_temporary_directory_cleanup

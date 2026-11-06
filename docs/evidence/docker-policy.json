@@ -1,0 +1,19 @@
+{
+  "docker_server": "29.1.3",
+  "container_id": "f68093fbd5c3b465627488a3d6ea696e18bed8d3faa01ac0c2f2695424403b13",
+  "image_id": "sha256:784d7349bdb9f01fea1e5b475806a1068fe872874d79aa7fd8643bb30546d76d",
+  "user": "1000:1000",
+  "privileged": false,
+  "cap_add": null,
+  "cap_drop": [
+    "ALL"
+  ],
+  "security_opt": [
+    "seccomp={\"defaultAction\":\"SCMP_ACT_ALLOW\",\"syscalls\":[{\"names\":[\"bpf\",\"kexec_load\",\"kexec_file_load\",\"reboot\",\"init_module\",\"finit_module\",\"delete_module\",\"swapon\",\"swapoff\",\"keyctl\",\"add_key\",\"request_key\",\"open_by_handle_at\",\"perf_event_open\",\"userfaultfd\"],\"action\":\"SCMP_ACT_ERRNO\",\"errnoRet\":1}]}",
+    "apparmor=unconfined"
+  ],
+  "apparmor": "unconfined",
+  "masked_paths": [],
+  "readonly_paths": [],
+  "base_image_digest": "m.daocloud.io/docker.io/library/ubuntu@sha256:fe81560990fae86dc4743202b2cb4d3df98d0bcf949173cecef15ce1127ef852"
+}

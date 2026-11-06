@@ -1,0 +1,36 @@
+make: Nothing to be done for 'all'.
+mkdir -p build
+cc -Isrc -O2 -g -std=c11 -Wall -Wextra -Wpedantic -Werror -fstack-protector-strong -D_FORTIFY_SOURCE=2 tests/proxy_unit.c src/proxy.c -Wl,-z,relro,-z,now -o build/proxy_unit
+build/proxy_unit
+proxy unit: address policy, host policy, CONNECT rejection PASS
+PASS: platform_startup
+PASS: filesystem_and_symlink
+PASS: seccomp_and_alternate_syscalls
+PASS: trusted_supervisor_control
+PASS: environment_allowlist
+PASS: inherited_fds
+PASS: business_nonzero
+PASS: target_signal
+PASS: business_exit_143
+PASS: stdout_stderr
+PASS: timeout
+PASS: background_setsid_cleanup
+PASS: background_did_not_survive
+PASS: cancellation
+PASS: caller_sigkill_cleanup
+PASS: actual_caller_exit
+PASS: cwd_startup_failure
+PASS: result_outside_workspace
+PASS: ld_preload_target_only
+PASS: exec_startup_failure
+PASS: direct_network_denied
+PASS: trusted_init_and_relay_control
+PASS: host_proxy_failure
+PASS: relay_failure
+PASS: https_allowlist
+PASS: https_host_denied
+PASS: proxy_environment_removal_cannot_bypass
+PASS: http_unsupported
+PASS: repeat_100
+PASS: concurrent_4x3
+PASS: normal_temporary_directory_cleanup

@@ -1,0 +1,44 @@
+{
+  "source_identity": {
+    "git_dirty": null,
+    "git_head": null,
+    "source_file_count": 18,
+    "source_id_schema": 1,
+    "source_scope": [
+      "src",
+      "tests",
+      "scripts",
+      "examples",
+      ".github/workflows",
+      "Makefile",
+      "Dockerfile"
+    ],
+    "source_tree_sha256": "847b9a7fa6d9f9820987a45d6ee3321a10e35f395484813e35e3a6c83242d9cd"
+  },
+  "vm": {
+    "checks": 31,
+    "failed": 0,
+    "blocked": 0,
+    "samples": 100,
+    "failed_samples": 0,
+    "median_ms": 11.806000000000001,
+    "p95_ms": 12.482,
+    "min_ms": 11.237,
+    "max_ms": 13.721,
+    "binary_sha256": "26e56068301b6dd5aabd1faf593e04ef85e5cfd918d7529a9e68cf4986066c75",
+    "source_tree_sha256": "847b9a7fa6d9f9820987a45d6ee3321a10e35f395484813e35e3a6c83242d9cd"
+  },
+  "docker": {
+    "checks": 31,
+    "failed": 0,
+    "blocked": 0,
+    "samples": 100,
+    "failed_samples": 0,
+    "median_ms": 11.7725,
+    "p95_ms": 12.87,
+    "min_ms": 11.329,
+    "max_ms": 29.244,
+    "binary_sha256": "29f3a33dc39bb2baab75f1fc567684966fe01abf5617d7f3d715773f0a69dd50",
+    "source_tree_sha256": "847b9a7fa6d9f9820987a45d6ee3321a10e35f395484813e35e3a6c83242d9cd"
+  }
+}

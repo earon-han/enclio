@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "git_dirty": null,
+  "git_head": null,
+  "source_file_count": 18,
+  "source_id_schema": 1,
+  "source_scope": [
+    "src",
+    "tests",
+    "scripts",
+    "examples",
+    ".github/workflows",
+    "Makefile",
+    "Dockerfile"
+  ],
+  "source_tree_sha256": "847b9a7fa6d9f9820987a45d6ee3321a10e35f395484813e35e3a6c83242d9cd",
+  "binary_sha256": "29f3a33dc39bb2baab75f1fc567684966fe01abf5617d7f3d715773f0a69dd50",
+  "platform": "Linux 0bac6f14a545 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:39:52 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux",
+  "results": [
+    {
+      "name": "platform_startup",
+      "status": "BLOCKED",
+      "returncode": 125,
+      "stdout": "",
+      "stderr": "bwrap: Can't mount proc on /newroot/proc: Operation not permitted\n",
+      "result": {
+        "schema_version": 1,
+        "status": "setup_error",
+        "exit_code": 125,
+        "signal": 0,
+        "duration_ms": 11,
+        "command_started": false
+      }
+    },
+    {
+      "name": "normal_temporary_directory_cleanup",
+      "status": "PASS",
+      "leftover_directories": []
+    }
+  ],
+  "benchmark_samples": [],
+  "failed": 0,
+  "blocked": 1
+}

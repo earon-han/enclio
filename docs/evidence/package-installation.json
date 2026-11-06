@@ -1,0 +1,40 @@
+{
+  "source_identity": {
+    "git_dirty": null,
+    "git_head": null,
+    "source_file_count": 18,
+    "source_id_schema": 1,
+    "source_scope": [
+      "src",
+      "tests",
+      "scripts",
+      "examples",
+      ".github/workflows",
+      "Makefile",
+      "Dockerfile"
+    ],
+    "source_tree_sha256": "847b9a7fa6d9f9820987a45d6ee3321a10e35f395484813e35e3a6c83242d9cd"
+  },
+  "archive_sha256": "e20af7b2d9ba82d09e02ac87cce84ed631b3d6abae0a8f9198260f6577dfcc8f",
+  "reproducible_repack": true,
+  "archive_contents_verified": true,
+  "version": "tegum 0.1.0-preview.1",
+  "doctor": {
+    "schema_version": 1,
+    "ready": true,
+    "architecture": "aarch64",
+    "kernel": "6.8.0-147-generic",
+    "bwrap": "/usr/bin/bwrap",
+    "sandbox_probe": "exited"
+  },
+  "installed_stdout": "INSTALLED_RUN\n",
+  "result": {
+    "schema_version": 1,
+    "status": "exited",
+    "exit_code": 0,
+    "signal": 0,
+    "duration_ms": 10,
+    "command_started": true
+  },
+  "written_file": "delivered\n"
+}
