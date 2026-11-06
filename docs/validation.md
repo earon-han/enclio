@@ -2,7 +2,7 @@
 
 验证日期：2026-11-06。测试使用本机 Lima Linux 虚拟机，以及该虚拟机中独立启动的 Docker 容器。macOS 仅用于编辑和协调，没有把 macOS 检查算作 Linux 沙箱验证。
 
-最终结果：**VM与Docker分别31项PASS、0 FAIL、0 BLOCKED**。每环境另含100次顺序和4并发共12次执行，零失败。实现/验证输入摘要为 `847b9a7fa6d9f9820987a45d6ee3321a10e35f395484813e35e3a6c83242d9cd`；所有安全探针和故障注入采用最后修复后的同一份源码。
+最终结果：**VM与Docker分别31项PASS、0 FAIL、0 BLOCKED**。每环境另含100次顺序和4并发共12次执行，零失败。实现/验证输入摘要为 `eac2d58349ae55caf1b3164a19afd090620bc1087f089dcdd30a6d16e2ba2d6c`；所有安全探针和故障注入采用最后修复后的同一份源码。
 
 发布的ARM64 C二进制SHA256：`26e56068301b6dd5aabd1faf593e04ef85e5cfd918d7529a9e68cf4986066c75`。Docker同源独立编译的二进制摘要不同，包含构建路径等调试信息；各自结果文件记录各自的真实摘要。
 
@@ -14,6 +14,8 @@
 | Docker | Docker 29.1.3，Ubuntu 24.04 arm64，内核同上；UID/GID 1000:1000；`--cap-drop ALL` | `docs/evidence/docker-integration.json`、`docker-environment.txt`、`docker-policy.json` |
 | Docker 默认安全策略 | 普通用户，默认 seccomp/AppArmor/proc masking | `docs/evidence/docker-default-doctor.json`；启动受阻，不能算安全负例通过 |
 | Docker 仅放宽 seccomp/AppArmor | 仍保留默认 proc masking | `docs/evidence/docker-proc-masked.json`；私有 proc 挂载 EPERM，记为 BLOCKED |
+| GitHub CI AMD64 | Ubuntu24.04.5，Linux7.0.0-1017-azure，bwrap0.9.0/libseccomp2.5.5；显式CI AppArmor许可 | VM与Docker各31 PASS；`docs/evidence/ci-success/amd64/` |
+| GitHub CI ARM64 | 同发行版/内核系列，原生aarch64 runner；显式CI AppArmor许可 | VM与Docker各31 PASS；`docs/evidence/ci-success/arm64/` |
 
 Docker 基础镜像实际来自 `m.daocloud.io/docker.io/library/ubuntu@sha256:fe81560990fae86dc4743202b2cb4d3df98d0bcf949173cecef15ce1127ef852`；这是 Docker Hub Ubuntu 24.04 的镜像代理来源，固定 digest 记录于 `docker-policy.json`。
 
@@ -75,6 +77,6 @@ scripts/validate-docker.sh
 
 CI覆盖Ubuntu24.04 x86_64和arm64的VM、Docker、打包与artifact保存。首次[远端运行42184102453](https://github.com/earon-han/tegum/actions/runs/42184102453)在两个架构的Linux7.0 Azure runner因AppArmor限制loopback RTM_NEWADDR而BLOCKED；原始记录保存于`docs/evidence/ci-initial/`，未计作安全负例通过，Docker阶段当时未执行。
 
-随后CI增加仅临时runner使用的bwrap限定AppArmor许可，保留全局sysctl原值，配置原文、加载状态和检查值作为artifact保存。重跑结果以实际workflow为准；本地ARM64的两环境结果不依赖此CIprofile。
+随后CI增加仅临时runner使用的bwrap限定AppArmor许可，保留全局sysctl原值，配置原文、加载状态和检查值作为artifact保存。[复跑42184798013](https://github.com/earon-han/tegum/actions/runs/42184798013)已在AMD64/ARM64两架构真实通过，各自VM和Docker均31 PASS、0 FAIL/BLOCKED；原始结果及profile前后记录保存于`docs/evidence/ci-success/`。profile在job结束时卸载。本地ARM64的两环境结果不依赖此CIprofile。
 
 原始 JSON 带实现源码摘要、二进制 SHA-256、每项 stdout/stderr、CLI result 及每次性能样本；二进制摘要可以对应发布包 manifest，源码树摘要用于追溯。最终结果以原始证据中的 `failed`、`blocked` 字段为准。

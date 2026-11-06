@@ -13,9 +13,9 @@
     "Makefile",
     "Dockerfile"
   ],
-  "source_tree_sha256": "847b9a7fa6d9f9820987a45d6ee3321a10e35f395484813e35e3a6c83242d9cd",
+  "source_tree_sha256": "eac2d58349ae55caf1b3164a19afd090620bc1087f089dcdd30a6d16e2ba2d6c",
   "binary_sha256": "29f3a33dc39bb2baab75f1fc567684966fe01abf5617d7f3d715773f0a69dd50",
-  "platform": "Linux f68093fbd5c3 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:39:52 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux",
+  "platform": "Linux 72d827269cbf 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:39:52 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux",
   "results": [
     {
       "name": "platform_startup",
@@ -25,7 +25,7 @@
         "status": "exited",
         "exit_code": 0,
         "signal": 0,
-        "duration_ms": 11,
+        "duration_ms": 10,
         "command_started": true
       }
     },
@@ -43,7 +43,7 @@
         "duration_ms": 11,
         "command_started": true
       },
-      "elapsed_ms": 13.208
+      "elapsed_ms": 11.355
     },
     {
       "name": "seccomp_and_alternate_syscalls",
@@ -56,10 +56,10 @@
         "status": "exited",
         "exit_code": 0,
         "signal": 0,
-        "duration_ms": 11,
+        "duration_ms": 10,
         "command_started": true
       },
-      "elapsed_ms": 13.227
+      "elapsed_ms": 11.216
     },
     {
       "name": "trusted_supervisor_control",
@@ -75,7 +75,7 @@
         "duration_ms": 11,
         "command_started": true
       },
-      "elapsed_ms": 13.936
+      "elapsed_ms": 11.785
     },
     {
       "name": "environment_allowlist",
@@ -91,7 +91,7 @@
         "duration_ms": 11,
         "command_started": true
       },
-      "elapsed_ms": 13.143
+      "elapsed_ms": 11.878
     },
     {
       "name": "inherited_fds",
@@ -104,10 +104,10 @@
         "status": "exited",
         "exit_code": 0,
         "signal": 0,
-        "duration_ms": 12,
+        "duration_ms": 11,
         "command_started": true
       },
-      "elapsed_ms": 13.772
+      "elapsed_ms": 11.851
     },
     {
       "name": "business_nonzero",
@@ -120,10 +120,10 @@
         "status": "exited",
         "exit_code": 23,
         "signal": 0,
-        "duration_ms": 11,
+        "duration_ms": 10,
         "command_started": true
       },
-      "elapsed_ms": 12.145
+      "elapsed_ms": 11.444
     },
     {
       "name": "target_signal",
@@ -139,7 +139,7 @@
         "duration_ms": 11,
         "command_started": true
       },
-      "elapsed_ms": 13.098
+      "elapsed_ms": 11.229
     },
     {
       "name": "business_exit_143",
@@ -155,7 +155,7 @@
         "duration_ms": 10,
         "command_started": true
       },
-      "elapsed_ms": 14.852
+      "elapsed_ms": 11.076
     },
     {
       "name": "stdout_stderr",
@@ -171,7 +171,7 @@
         "duration_ms": 10,
         "command_started": true
       },
-      "elapsed_ms": 11.904
+      "elapsed_ms": 11.041
     },
     {
       "name": "timeout",
@@ -184,10 +184,10 @@
         "status": "timeout",
         "exit_code": 124,
         "signal": 0,
-        "duration_ms": 1106,
+        "duration_ms": 1103,
         "command_started": true
       },
-      "elapsed_ms": 1107.821
+      "elapsed_ms": 1108.032
     },
     {
       "name": "background_setsid_cleanup",
@@ -200,10 +200,10 @@
         "status": "exited",
         "exit_code": 0,
         "signal": 0,
-        "duration_ms": 11,
+        "duration_ms": 10,
         "command_started": true
       },
-      "elapsed_ms": 12.484
+      "elapsed_ms": 13.773
     },
     {
       "name": "background_did_not_survive",
@@ -220,7 +220,7 @@
         "status": "cancelled",
         "exit_code": 143,
         "signal": 15,
-        "duration_ms": 110,
+        "duration_ms": 111,
         "command_started": true
       }
     },
@@ -231,7 +231,7 @@
       "stderr": "",
       "leftover_private_directories": [
         {
-          "path": "/tmp/tegum-PMqctQ",
+          "path": "/tmp/tegum-8bvuKI",
           "mode": "0o700"
         }
       ]
@@ -257,7 +257,7 @@
         "status": "setup_error",
         "exit_code": 125,
         "signal": 0,
-        "duration_ms": 11,
+        "duration_ms": 10,
         "command_started": false
       }
     },
@@ -305,10 +305,10 @@
         "status": "exited",
         "exit_code": 0,
         "signal": 0,
-        "duration_ms": 11,
+        "duration_ms": 21,
         "command_started": true
       },
-      "elapsed_ms": 11.906
+      "elapsed_ms": 22.688
     },
     {
       "name": "trusted_init_and_relay_control",
@@ -321,10 +321,10 @@
         "status": "exited",
         "exit_code": 0,
         "signal": 0,
-        "duration_ms": 137,
+        "duration_ms": 126,
         "command_started": true
       },
-      "elapsed_ms": 142.384
+      "elapsed_ms": 127.933
     },
     {
       "name": "host_proxy_failure",
@@ -335,7 +335,7 @@
         "status": "setup_error",
         "exit_code": 125,
         "signal": 0,
-        "duration_ms": 143,
+        "duration_ms": 137,
         "command_started": true
       }
     },
@@ -349,7 +349,7 @@
         "status": "setup_error",
         "exit_code": 125,
         "signal": 0,
-        "duration_ms": 135,
+        "duration_ms": 134,
         "command_started": true
       }
     },
@@ -364,10 +364,10 @@
         "status": "exited",
         "exit_code": 0,
         "signal": 0,
-        "duration_ms": 900,
+        "duration_ms": 825,
         "command_started": true
       },
-      "elapsed_ms": 903.391
+      "elapsed_ms": 827.514
     },
     {
       "name": "https_host_denied",
@@ -380,10 +380,10 @@
         "status": "exited",
         "exit_code": 0,
         "signal": 0,
-        "duration_ms": 147,
+        "duration_ms": 145,
         "command_started": true
       },
-      "elapsed_ms": 151.24
+      "elapsed_ms": 148.849
     },
     {
       "name": "proxy_environment_removal_cannot_bypass",
@@ -396,10 +396,10 @@
         "status": "exited",
         "exit_code": 0,
         "signal": 0,
-        "duration_ms": 146,
+        "duration_ms": 131,
         "command_started": true
       },
-      "elapsed_ms": 152.172
+      "elapsed_ms": 134.424
     },
     {
       "name": "http_unsupported",
@@ -415,7 +415,7 @@
         "duration_ms": 145,
         "command_started": true
       },
-      "elapsed_ms": 152.575
+      "elapsed_ms": 148.827
     },
     {
       "name": "repeat_100",
@@ -433,467 +433,132 @@
   ],
   "benchmark_samples": [
     {
-      "elapsed_ms": 29.244,
+      "elapsed_ms": 13.34,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 14.412,
+      "elapsed_ms": 13.069,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 12.611,
+      "elapsed_ms": 11.97,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.841,
+      "elapsed_ms": 11.558,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.852,
+      "elapsed_ms": 11.638,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.404,
+      "elapsed_ms": 11.398,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.651,
+      "elapsed_ms": 11.516,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.338,
+      "elapsed_ms": 11.954,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.597,
+      "elapsed_ms": 11.863,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.743,
+      "elapsed_ms": 11.467,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.632,
+      "elapsed_ms": 11.759,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.718,
+      "elapsed_ms": 11.464,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.972,
+      "elapsed_ms": 11.413,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.768,
+      "elapsed_ms": 11.548,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.682,
+      "elapsed_ms": 11.419,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.509,
+      "elapsed_ms": 12.085,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.939,
+      "elapsed_ms": 11.269,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.671,
+      "elapsed_ms": 11.316,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.504,
+      "elapsed_ms": 11.488,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.712,
+      "elapsed_ms": 11.271,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.761,
+      "elapsed_ms": 11.785,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.564,
+      "elapsed_ms": 11.538,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.565,
+      "elapsed_ms": 11.208,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.839,
+      "elapsed_ms": 11.704,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.71,
+      "elapsed_ms": 11.373,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.56,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.672,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.745,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.77,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 12.105,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.822,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.663,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.564,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.812,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 12.09,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.884,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.958,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.772,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 12.644,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.883,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.947,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 12.623,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 13.027,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.891,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.879,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 12.036,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 12.679,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.649,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.734,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.525,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.628,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.848,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.455,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.615,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 13.197,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.805,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.747,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 12.048,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.667,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.745,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.897,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.87,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 12.188,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.885,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.819,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.967,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.887,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 12.077,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.827,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 12.003,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.719,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.875,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 12.094,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 12.881,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 12.437,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.746,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.885,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.636,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.443,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.566,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.746,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.58,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.532,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.329,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 12.211,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.566,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.828,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 12.164,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.68,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.59,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 12.87,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.788,
-      "returncode": 0,
-      "command_started": true
-    },
-    {
-      "elapsed_ms": 11.367,
+      "elapsed_ms": 11.341,
       "returncode": 0,
       "command_started": true
     },
@@ -903,32 +568,367 @@
       "command_started": true
     },
     {
+      "elapsed_ms": 11.372,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.439,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.288,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.456,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.648,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.82,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.253,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.26,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.306,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.502,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.454,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.419,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.396,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.298,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.25,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.359,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.177,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.331,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.279,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.822,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.524,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.391,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.384,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.131,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.297,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.395,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.371,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.519,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.334,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.435,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.709,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.442,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.462,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.218,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.323,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.771,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.342,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.556,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.27,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.229,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.09,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.516,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.295,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.673,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.569,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.351,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.295,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.248,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 12.023,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.224,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.377,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.577,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.923,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.35,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.249,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
       "elapsed_ms": 11.661,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.509,
+      "elapsed_ms": 11.421,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.773,
+      "elapsed_ms": 11.288,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.944,
+      "elapsed_ms": 11.308,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 12.308,
+      "elapsed_ms": 11.124,
       "returncode": 0,
       "command_started": true
     },
     {
-      "elapsed_ms": 11.583,
+      "elapsed_ms": 11.134,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.245,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.281,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.331,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.176,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.191,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.086,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.144,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.65,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.624,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.258,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.172,
+      "returncode": 0,
+      "command_started": true
+    },
+    {
+      "elapsed_ms": 11.394,
       "returncode": 0,
       "command_started": true
     }

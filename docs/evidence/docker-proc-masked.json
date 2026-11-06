@@ -13,9 +13,9 @@
     "Makefile",
     "Dockerfile"
   ],
-  "source_tree_sha256": "847b9a7fa6d9f9820987a45d6ee3321a10e35f395484813e35e3a6c83242d9cd",
+  "source_tree_sha256": "eac2d58349ae55caf1b3164a19afd090620bc1087f089dcdd30a6d16e2ba2d6c",
   "binary_sha256": "29f3a33dc39bb2baab75f1fc567684966fe01abf5617d7f3d715773f0a69dd50",
-  "platform": "Linux 0bac6f14a545 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:39:52 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux",
+  "platform": "Linux 1df871310710 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:39:52 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux",
   "results": [
     {
       "name": "platform_startup",
@@ -28,7 +28,7 @@
         "status": "setup_error",
         "exit_code": 125,
         "signal": 0,
-        "duration_ms": 11,
+        "duration_ms": 10,
         "command_started": false
       }
     },

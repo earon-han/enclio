@@ -27,8 +27,8 @@
 | A06 | 完成 | 文件系统隔离、原生ABI seccomp、FD/env清理 | 独立probe执行后验证文件/符号链接/syscall/FD限制 |
 | A07 | 完成 | CONNECT代理、relay、DNS地址校验、连接上限 | 真实HTTPS正向与负例、协议单元测试；不声称TLS内容检查 |
 | A08 | 完成 | 超时、取消、调用方死亡、后代清理、示例 | 两环境实际调用方退出、SIGKILL、setsid、代理/relay故障均通过 |
-| A09 | 完成 | VM与Docker报告、安全回归证据 | 同源两环境各31项PASS、0FAIL、0BLOCKED；默认Docker阻断单列；amd64尚无本地实测 |
-| A10 | 完成 | 100重复/并发、CI与打包流水线 | 每环境100顺序+4并发共12次零失败，原始样本保留；双架构远端CI配置与本地结果分别说明 |
+| A09 | 完成 | VM与Docker报告、安全回归证据 | 同源两环境各31项PASS、0FAIL、0BLOCKED；默认Docker阻断单列；本地ARM64；远端CI另在AMD64/ARM64各自验证VM+Docker |
+| A10 | 完成 | 100重复/并发、CI与打包流水线 | 每环境100顺序+4并发共12次零失败，原始样本保留；双架构远端CI真实通过，原始证据与本地结果分别说明 |
 | A11 | 完成 | 预览版包、校验、清洁安装和探测 | ARM64包两次生成一致，解压校验、doctor、实际运行通过；预览版本见下方发布记录 |
 
 ## 提交追溯
@@ -37,14 +37,14 @@
 |---|---|
 | A00—A04 设计与安全基线 | `8ea4053` |
 | A05—A09 C实现与独立攻击探针 | `dbb87b3` |
-| A10—A11 容器、CI、源码追溯、打包 | 该文件所在分支的 `build(A10-A11)` 提交 |
-| A09—A11 最终证据和验收 | 该文件所在分支的 `docs(A09-A11)` 提交 |
+| A10—A11 容器、CI、源码追溯、打包 | `746cc2e` |
+| A09—A11 最终证据和验收 | `1921434`，及后续CI证据/发布收尾提交 |
 
 工作分支：`codex/tegum-linux-sandbox`。首个预览版本：[v0.1.0-preview.1](https://github.com/earon-han/tegum/releases/tag/v0.1.0-preview.1)。远端版本以该链接的实际发布状态为准；未合并主分支不影响 tag 对具体源码的追溯。
 
-执行与验证输入 SHA256：`847b9a7fa6d9f9820987a45d6ee3321a10e35f395484813e35e3a6c83242d9cd`。报告同时记录二进制SHA256，避免把传输到VM时尚无`.git`的源码误标为空实现HEAD；这种传输副本的Git字段明确为null。发布包manifest另记录最终tag对应的Git提交。
+执行与验证输入 SHA256：`eac2d58349ae55caf1b3164a19afd090620bc1087f089dcdd30a6d16e2ba2d6c`。报告同时记录二进制SHA256，避免把传输到VM时尚无`.git`的源码误标为空实现HEAD；这种传输副本的Git字段明确为null。发布包manifest另记录最终tag对应的Git提交。
 
-`docs/evidence/package-installation.json` 为实验阶段无Git元数据归档的重复打包/安装证据。最终Release归档因加入最终Git提交和文档而改变archive SHA，C二进制和实现输入不变；随Release提供的 `release-verification.json` 单独校验最终归档、提交与安装探测，不改写原始证据。
+`docs/evidence/package-installation.json` 为实验阶段尚未同步最终Git提交元数据归档的重复打包/安装证据。最终Release归档因加入最终Git提交和文档而改变archive SHA，C二进制和实现输入不变；随Release提供的 `release-verification.json` 单独校验最终归档、提交与安装探测，不改写原始证据。
 
 ## 检查点
 
