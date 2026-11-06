@@ -1,0 +1,98 @@
+name: Linux
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  integration:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-24.04, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y bubblewrap libseccomp-dev build-essential pkg-config curl git python3 apparmor-utils
+      - name: Permit bwrap user namespaces on this temporary CI VM
+        run: |
+          mkdir -p build/apparmor
+          sudo cat /sys/kernel/security/apparmor/profiles > build/apparmor/before.txt
+          if grep -i bwrap build/apparmor/before.txt; then
+            echo 'Existing bwrap profile requires review; refusing to override it.' >&2
+            exit 1
+          fi
+          sysctl kernel.apparmor_restrict_unprivileged_userns > build/apparmor/sysctl-before.txt
+          cat > build/apparmor/enclio-ci-bwrap <<'PROFILE'
+          abi <abi/4.0>,
+          include <tunables/global>
+          profile enclio-ci-bwrap /usr/bin/bwrap flags=(unconfined) {
+            userns,
+          }
+          PROFILE
+          sha256sum build/apparmor/enclio-ci-bwrap > build/apparmor/profile.sha256
+          sudo install -m644 build/apparmor/enclio-ci-bwrap /etc/apparmor.d/enclio-ci-bwrap
+          sudo apparmor_parser -r /etc/apparmor.d/enclio-ci-bwrap
+          sudo cat /sys/kernel/security/apparmor/profiles > build/apparmor/loaded.txt
+          sysctl kernel.apparmor_restrict_unprivileged_userns > build/apparmor/sysctl-after.txt
+          cmp build/apparmor/sysctl-before.txt build/apparmor/sysctl-after.txt
+      - name: VM build and validation with delegated aggregate limits
+        run: |
+          sudo systemd-run --wait --pipe --collect \
+            --unit="enclio-ci-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${RUNNER_ARCH}" \
+            --property="User=$(id -un)" --property="Group=$(id -gn)" \
+            --property=Delegate=yes --property=MemoryMax=768M \
+            --property=TasksMax=256 --property=CPUQuota=200% \
+            --working-directory="$PWD" \
+            python3 tests/with_delegation.py -- scripts/validate-linux.sh
+      - name: Package native Linux binary
+        run: make package
+      - name: Docker build
+        run: docker build -t enclio-ci .
+      - name: Docker default-policy diagnostic
+        run: |
+          mkdir -p build/docker
+          docker run --name enclio-default enclio-ci build/enclio doctor > build/docker/default-doctor.json 2> build/docker/default-doctor.stderr || true
+          docker inspect enclio-default > build/docker/default-inspect.json
+          docker rm enclio-default
+      - name: Docker nested sandbox validation
+        run: |
+          docker run --name enclio-test --cap-drop ALL \
+            --security-opt seccomp="$PWD/scripts/docker-seccomp.json" \
+            --security-opt apparmor=unconfined \
+            --security-opt systempaths=unconfined \
+            enclio-ci scripts/validate-linux.sh
+      - name: Collect Docker evidence
+        if: always()
+        run: |
+          mkdir -p build/docker
+          docker cp enclio-test:/opt/enclio/build/integration.json build/docker/integration.json || true
+          docker cp enclio-test:/opt/enclio/build/environment.txt build/docker/environment.txt || true
+          docker cp enclio-test:/opt/enclio/build/fuzz.log build/docker/fuzz.log || true
+          docker cp enclio-test:/opt/enclio/build/resource-integration.json build/docker/resource-integration.json || true
+          docker cp enclio-test:/opt/enclio/build/network-integration.json build/docker/network-integration.json || true
+          docker cp enclio-test:/opt/enclio/build/options-integration.json build/docker/options-integration.json || true
+          docker logs enclio-test > build/docker/test.log 2>&1 || true
+          docker inspect enclio-test > build/docker/inspect.json || true
+          docker rm -f enclio-test || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evidence-and-package-${{ matrix.runner }}
+          path: |
+            build/environment.txt
+            build/integration.json
+            build/resource-integration.json
+            build/network-integration.json
+            build/options-integration.json
+            build/fuzz.log
+            build/docker
+            build/apparmor
+            dist/*.tar.gz
+            dist/SHA256SUMS
+      - name: Remove the CI-only profile
+        if: always()
+        run: |
+          if test -f /etc/apparmor.d/enclio-ci-bwrap; then
+            sudo apparmor_parser -R /etc/apparmor.d/enclio-ci-bwrap
+            sudo rm /etc/apparmor.d/enclio-ci-bwrap
+          fi
