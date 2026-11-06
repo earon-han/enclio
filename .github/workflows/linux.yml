@@ -1,0 +1,53 @@
+name: Linux
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  integration:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-24.04, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y bubblewrap libseccomp-dev build-essential pkg-config curl python3
+      - name: VM build, unit, integration and live HTTPS
+        run: scripts/validate-linux.sh
+      - name: Package native Linux binary
+        run: make package
+      - name: Docker build
+        run: docker build -t tegum-ci .
+      - name: Docker default-policy diagnostic
+        run: |
+          mkdir -p build/docker
+          docker run --name tegum-default tegum-ci build/tegum doctor > build/docker/default-doctor.json 2> build/docker/default-doctor.stderr || true
+          docker inspect tegum-default > build/docker/default-inspect.json
+          docker rm tegum-default
+      - name: Docker nested sandbox validation
+        run: |
+          docker run --name tegum-test --cap-drop ALL \
+            --security-opt seccomp="$PWD/scripts/docker-seccomp.json" \
+            --security-opt apparmor=unconfined \
+            --security-opt systempaths=unconfined \
+            tegum-ci scripts/validate-linux.sh
+      - name: Collect Docker evidence
+        if: always()
+        run: |
+          mkdir -p build/docker
+          docker cp tegum-test:/opt/tegum/build/integration.json build/docker/integration.json || true
+          docker cp tegum-test:/opt/tegum/build/environment.txt build/docker/environment.txt || true
+          docker logs tegum-test > build/docker/test.log 2>&1 || true
+          docker inspect tegum-test > build/docker/inspect.json || true
+          docker rm -f tegum-test || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evidence-and-package-${{ matrix.runner }}
+          path: |
+            build/environment.txt
+            build/integration.json
+            build/docker
+            dist/*.tar.gz
+            dist/SHA256SUMS
