@@ -1,0 +1,2 @@
+# Public evidence summaries use ordinary text handling.
+docs/evidence/**/*.md text eol=lf
